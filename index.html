@@ -83,11 +83,11 @@ object-fit:contain;
 
 button{
 width:100%;
-padding:5px;
-font-size:10px;
+padding:6px;
+font-size:11px;
 margin-top:4px;
 border:none;
-border-radius:4px;
+border-radius:6px;
 cursor:pointer;
 }
 
@@ -117,7 +117,7 @@ cursor:pointer;
 <div class="desc">Art moderne</div>
 <div class="price">800 FCFA</div>
 <button class="download" onclick="openDownload(101,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(23)_202604302106_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(23)">WhatsApp</button>
+<button class="wa" onclick="whatsapp(101)">WhatsApp</button>
 </div>
 </div>
 
@@ -125,7 +125,7 @@ cursor:pointer;
 <div class="img-box"><img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(24)_202604302107_1.jpg"></div>
 <div class="card-content">
 <div class="title">Acrylique 2</div>
-<div class="desc">Style créatif</div>
+<div class="desc">Créatif</div>
 <div class="price">800 FCFA</div>
 <button class="download" onclick="openDownload(102,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(24)_202604302107_1.jpg')">Télécharger</button>
 <button class="wa" onclick="whatsapp(102)">WhatsApp</button>
@@ -318,11 +318,10 @@ cursor:pointer;
 <script>
 
 function whatsapp(id){
-let msg=`🛒 COMMANDE
+let msg=`🛒 COMMANDE PRODUIT
 
-📦 Produit ID: ${id}
-💰 Prix: 1000 XAF
-📲 WhatsApp paiement`;
+📦 ID: ${id}
+💰 Paiement WhatsApp`;
 
 window.open("https://wa.me/237670035609?text="+encodeURIComponent(msg),"_blank");
 }
@@ -339,7 +338,7 @@ popup.style.cssText=`
 position:fixed;
 top:0;left:0;
 width:100%;height:100%;
-background:linear-gradient(135deg,#0b1220,#1e3a8a,#0f172a);
+background:rgba(0,0,0,0.8);
 display:flex;
 justify-content:center;
 align-items:center;
@@ -348,9 +347,9 @@ z-index:9999;
 
 popup.innerHTML=`
 <div style="
-background:rgba(18,26,43,0.96);
-padding:22px;
-border-radius:18px;
+background:#111827;
+padding:20px;
+border-radius:12px;
 width:90%;
 max-width:340px;
 text-align:center;
@@ -360,24 +359,22 @@ border:1px solid #3b82f6;
 
 <h2>🔐 Téléchargement</h2>
 
-<p>💰 Code ou WhatsApp paiement</p>
-
 <input id="codeInput"
-placeholder="🔑 Code X..."
-style="width:100%;padding:12px;margin-top:10px;border-radius:10px;border:1px solid #3b82f6;background:#0f172a;color:white;text-align:center;">
+placeholder="Code X..."
+style="width:100%;padding:10px;margin-top:10px;border-radius:8px;text-align:center;background:#0f172a;color:white;border:1px solid #3b82f6;">
 
 <button id="dlBtn"
-style="width:100%;padding:10px;margin-top:10px;background:#3b82f6;color:white;border:none;border-radius:10px;">
+style="width:100%;padding:10px;margin-top:10px;background:#3b82f6;color:white;border-radius:8px;">
 ⬇ Télécharger
 </button>
 
 <button onclick="whatsapp(${id})"
-style="width:100%;padding:10px;margin-top:8px;background:#25D366;color:white;border:none;border-radius:10px;">
+style="width:100%;padding:10px;margin-top:8px;background:#25D366;color:white;border-radius:8px;">
 💬 WhatsApp
 </button>
 
 <button onclick="document.getElementById('popupBox').remove()"
-style="width:100%;padding:10px;margin-top:8px;background:#ef4444;color:white;border:none;border-radius:10px;">
+style="width:100%;padding:10px;margin-top:8px;background:#ef4444;color:white;border-radius:8px;">
 🔙 Retour
 </button>
 
@@ -393,22 +390,11 @@ let secret="X"+id;
 
 if(code===secret){
 
-// 1. Ouvrir image
-let win = window.open(url, "_blank");
-
-if(win){
+window.open(url,"_blank");
 
 setTimeout(()=>{
-alert("📥 IMPORTANT :\n\n👉 Appuie long sur l'image\n👉 Puis clique sur 'Télécharger' ou 'Enregistrer dans la galerie'");
-},500);
-
-setTimeout(()=>{
-alert("📱 Android : Télécharger image\n🍎 iPhone : Ajouter aux photos");
-},2000);
-
-}else{
-alert("❌ Impossible d’ouvrir l’image\nVérifie ton navigateur");
-}
+alert("📥 Ouvre l’image puis appuie long pour télécharger");
+},600);
 
 document.getElementById("popupBox").remove();
 
@@ -417,6 +403,9 @@ alert("❌ Code incorrect");
 }
 
 };
+
+}
+
 function updateTime(){
 document.getElementById("time").innerText=new Date().toLocaleTimeString();
 }
