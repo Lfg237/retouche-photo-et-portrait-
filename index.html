@@ -1,8 +1,11 @@
-<!DOCTYPE html><html lang="fr">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Boutique E-commerce Pro</title><style>
+<title>Boutique E-commerce Pro</title>
+
+<style>
 *{box-sizing:border-box;}
 
 body{
@@ -19,7 +22,7 @@ background:#0a0f1a;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:10px 12px;
+padding:10px;
 z-index:1000;
 border-bottom:1px solid #1f2a44;
 }
@@ -27,247 +30,218 @@ border-bottom:1px solid #1f2a44;
 .menu-btn{font-size:22px;cursor:pointer;}
 #time{font-size:13px;opacity:0.9;}
 
-.menu{
-position:fixed;
-top:0;
-left:-260px;
-width:260px;
-height:100%;
-background:#0a0f1a;
-padding:20px;
-transition:0.3s;
-}
-
-.menu a{
-display:block;
-color:white;
-text-decoration:none;
-padding:10px 0;
-border-bottom:1px solid #1f2a44;
-}
-
-.menu.active{left:0;}
-
-.banner{
-overflow:hidden;
-white-space:nowrap;
-background:#111a2e;
-padding:10px 0;
-border-bottom:1px solid #1f2a44;
-}
-
-.banner span{
-display:inline-block;
-padding-left:100%;
-animation:scroll 12s linear infinite;
-font-weight:bold;
-color:#22c55e;
-}
-
-@keyframes scroll{
-0%{transform:translateX(0%);}
-100%{transform:translateX(-100%);}
-}
-
 .section{padding:15px;}
-.section h2{font-size:16px;margin-bottom:10px;}
 
 .carousel{
 display:flex;
 overflow-x:auto;
 gap:12px;
-padding-bottom:10px;
 }
 
+/* 🔥 CARTE FIXE */
 .card{
 min-width:180px;
 max-width:180px;
 background:#121a2b;
-border-radius:12px;
+border-radius:10px;
 overflow:hidden;
-flex-shrink:0;
-box-shadow:0 0 10px rgba(0,0,0,0.3);
+display:flex;
+flex-direction:column;
 }
 
-.card img{
+/* 🔥 CONTENEUR IMAGE FIXE */
+.img-box{
 width:100%;
-height:130px;
-object-fit:cover;
+height:160px;
+background:#0b1220;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
-.card-content{padding:10px;}
+.img-box img{
+max-width:100%;
+max-height:100%;
+object-fit:contain;
+display:block;
+}
 
-.title{font-size:14px;margin:4px 0;font-weight:bold;}
-.desc{font-size:12px;opacity:0.85;margin:4px 0;line-height:1.3;}
-.price{color:#22c55e;font-size:13px;font-weight:bold;margin:4px 0;}
+.card-content{padding:8px;}
 
+.title{font-size:13px;font-weight:bold;}
+.desc{font-size:11px;opacity:0.85;margin:4px 0;}
+.price{color:#22c55e;font-weight:bold;font-size:13px;}
+
+/* 🔽 boutons petits */
 button{
 width:100%;
-padding:7px;
-font-size:12px;
-background:#25D366;
+padding:4px;
+font-size:10px;
+margin-top:4px;
 border:none;
-border-radius:6px;
-color:white;
+border-radius:4px;
 cursor:pointer;
-margin-top:6px;
 }
 
-button:hover{background:#1fb655;}
+.download{background:#3b82f6;color:white;}
+.wa{background:#25D366;color:white;}
 
-footer{
-text-align:center;
-padding:20px;
-background:#0a0f1a;
-margin-top:20px;
-font-size:12px;
-opacity:0.8;
-}
-</style></head><body><header>
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
-<div>BOUTIQUE EN LIGNE À VENDRE</div>
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="menu-btn">☰</div>
+<div>BOUTIQUE PRO</div>
 <div id="time"></div>
-</header><div class="banner">
-<span>🔥 PROMO EXCEPTIONNELLE - SITE À VENDRE - CONTACT WHATSAPP +237670035609 🔥</span>
-</div><div class="menu" id="menu">
-<a href="https://google.com" target="_blank">Google</a>
-<a href="https://facebook.com" target="_blank">Facebook</a>
-<a href="https://whatsapp.com" target="_blank">WhatsApp</a>
-</div><!-- PREMIUM --><div class="section">
+</header>
+
+<!-- ================= PREMIUM ================= -->
+<div class="section">
 <h2>💎 Premium</h2>
-<div class="carousel"><div class="card">
-<img src="https://raw.githubusercontent.com/Lfg237/m-dias/main/affiche_compressee.jpg">
-<div class="card-content">
-<div class="title">Produit Premium</div>
-<div class="desc">Qualité supérieure et design moderne</div>
-<div class="price">5000 FCFA</div>
-<button onclick="buy('Produit Premium','5000 FCFA','Qualité supérieure','https://raw.githubusercontent.com/Lfg237/m-dias/main/affiche_compressee.jpg')">WhatsApp</button>
-</div>
-</div>
-
+<div class="carousel">
 
 <div class="card">
-<img src="https://raw.githubusercontent.com/Lfg237/m-dias/main/InShot_20260319_093613701.jpg">
+<div class="img-box">
+<img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(23)_202604302106_1.jpg">
+</div>
 <div class="card-content">
-<div class="title">Produit VIP</div>
-<div class="desc">Version haut de gamme</div>
-<div class="price">8000 FCFA</div>
-<button onclick="buy('Produit VIP','8000 FCFA','Version haut de gamme','https://raw.githubusercontent.com/Lfg237/m-dias/main/affiche_compressee.jpg')">WhatsApp</button>
+<div class="title">Portrait 23</div>
+<div class="desc">JPEG 1000 FCFA / Grand format 10000 FCFA</div>
+<div class="price">1000 FCFA</div>
+<button class="download" onclick="downloadImg(23,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(23)_202604302106_1.jpg')">Télécharger</button>
+<button class="wa" onclick="whatsapp(23)">WhatsApp</button>
 </div>
 </div>
 
 <div class="card">
-<img src="https://raw.githubusercontent.com/Lfg237/m-dias/main/InShot_20260319_093613701.jpg">
+<div class="img-box">
+<img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(24)_202604302107_1.jpg">
+</div>
 <div class="card-content">
-<div class="title">Produit VIP</div>
-<div class="desc">Version haut de gamme</div>
-<div class="price">8000 FCFA</div>
-<button onclick="buy('Produit VIP','8000 FCFA','Version haut de gamme','https://raw.githubusercontent.com/Lfg237/m-dias/main/affiche_compressee.jpg')">WhatsApp</button>
+<div class="title">Portrait 24</div>
+<div class="desc">JPEG 1000 FCFA / Grand format 10000 FCFA</div>
+<div class="price">1000 FCFA</div>
+<button class="download" onclick="downloadImg(24,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(24)_202604302107_1.jpg')">Télécharger</button>
+<button class="wa" onclick="whatsapp(24)">WhatsApp</button>
 </div>
 </div>
 
-<div class="card">
-<img src="https://raw.githubusercontent.com/Lfg237/m-dias/main/affiche_compressee.jpg">
-<div class="card-content">
-<div class="title">Produit Premium 3</div>
-<div class="desc">Produit haut niveau qualité pro</div>
-<div class="price">6500 FCFA</div>
-<button onclick="buy('Produit Premium 3','6500 FCFA','Produit haut niveau qualité pro','https://raw.githubusercontent.com/Lfg237/m-dias/main/affiche_compressee.jpg')">WhatsApp</button>
 </div>
 </div>
 
-
-
-</div>
-</div><!-- PROMO --><div class="section">
+<!-- ================= PROMO ================= -->
+<div class="section">
 <h2>🔥 Promo</h2>
-<div class="carousel"><div class="card">
-<img src="https://raw.githubusercontent.com/Lfg237/m-dias/main/affiche_compressee.jpg">
-<div class="card-content">
-<div class="title">Promo 1</div>
-<div class="desc">Offre spéciale limitée</div>
-<div class="price">3000 FCFA</div>
-<button onclick="buy('Promo 1','3000 FCFA','Offre spéciale limitée','https://raw.githubusercontent.com/Lfg237/m-dias/main/affiche_compressee.jpg')">WhatsApp</button>
-</div>
-</div>
-
+<div class="carousel">
 
 <div class="card">
-<img src="https://raw.githubusercontent.com/Lfg237/m-dias/main/affiche_compressee.jpg">
+<div class="img-box">
+<img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(43)_202604302111_1.jpg">
+</div>
 <div class="card-content">
-<div class="title">Promo 2</div>
-<div class="desc">Réduction exceptionnelle</div>
-<div class="price">3500 FCFA</div>
-<button onclick="buy('Promo 2','3500 FCFA','Réduction exceptionnelle','https://raw.githubusercontent.com/Lfg237/m-dias/main/affiche_compressee.jpg')">WhatsApp</button>
+<div class="title">Promo 43</div>
+<div class="desc">Image promotionnelle</div>
+<div class="price">1000 FCFA</div>
+<button class="download" onclick="downloadImg(43,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(43)_202604302111_1.jpg')">Télécharger</button>
+<button class="wa" onclick="whatsapp(43)">WhatsApp</button>
 </div>
 </div>
 
-
-<div class="card">
-<img src="https://raw.githubusercontent.com/Lfg237/m-dias/main/affiche_compressee.jpg">
-<div class="card-content">
-<div class="title">Promo 3</div>
-<div class="desc">Stock limité</div>
-<div class="price">2800 FCFA</div>
-<button onclick="buy('Promo 3','2800 FCFA','Stock limité','https://raw.githubusercontent.com/Lfg237/m-dias/main/affiche_compressee.jpg')">WhatsApp</button>
 </div>
 </div>
 
-
-</div>
-</div><!-- SOLDE --><div class="section">
+<!-- ================= SOLDES ================= -->
+<div class="section">
 <h2>💸 Soldes</h2>
-<div class="carousel"><div class="card">
-<img src="https://raw.githubusercontent.com/Lfg237/m-dias/main/affiche_compressee.jpg">
+<div class="carousel">
+
+<div class="card">
+<div class="img-box">
+<img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(61)_202605010818_1.jpg">
+</div>
 <div class="card-content">
-<div class="title">Solde 1</div>
+<div class="title">Solde 61</div>
 <div class="desc">Dernière chance</div>
-<div class="price">2000 FCFA</div>
-<button onclick="buy('Solde 1','2000 FCFA','Dernière chance','https://raw.githubusercontent.com/Lfg237/m-dias/main/affiche_compressee.jpg')">WhatsApp</button>
-</div>
-</div>
-
-<div class="card">
-<img src="https://raw.githubusercontent.com/Lfg237/m-dias/main/affiche_compressee.jpg">
-<div class="card-content">
-<div class="title">Solde 2</div>
-<div class="desc">Prix cassé</div>
-<div class="price">1500 FCFA</div>
-<button onclick="buy('Solde 2','1500 FCFA','Prix cassé','https://raw.githubusercontent.com/Lfg237/m-dias/main/affiche_compressee.jpg')">WhatsApp</button>
-</div>
-</div>
-<div class="card">
-<img src="https://raw.githubusercontent.com/Lfg237/m-dias/main/InShot_20260319_093613701.jpg">
-<div class="card-content">
-<div class="title">Produit VIP</div>
-<div class="desc">Version haut de gamme</div>
-<div class="price">8000 FCFA</div>
-<button onclick="buy('Produit VIP','8000 FCFA','Version haut de gamme','https://raw.githubusercontent.com/Lfg237/m-dias/main/affiche_compressee.jpg')">WhatsApp</button>
-</div>
-</div>
-
-
-<div class="card">
-<img src="https://raw.githubusercontent.com/Lfg237/m-dias/main/affiche_compressee.jpg">
-<div class="card-content">
-<div class="title">Solde 3</div>
-<div class="desc">Fin de stock</div>
-<div class="price">1800 FCFA</div>
-<button onclick="buy('Solde 3','1800 FCFA','Fin de stock','https://raw.githubusercontent.com/Lfg237/m-dias/main/affiche_compressee.jpg')">WhatsApp</button>
+<div class="price">1000 FCFA</div>
+<button class="download" onclick="downloadImg(61,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(61)_202605010818_1.jpg')">Télécharger</button>
+<button class="wa" onclick="whatsapp(61)">WhatsApp</button>
 </div>
 </div>
 
 </div>
-</div><footer>
-© 2026 Boutique Pro à vendre | WhatsApp +237670035609
-</footer><script>
-function toggleMenu(){document.getElementById("menu").classList.toggle("active");}
-function updateTime(){document.getElementById("time").innerText=new Date().toLocaleTimeString();}
-setInterval(updateTime,1000);updateTime();
+</div>
 
-function buy(name,price,desc,image){
-let msg=`🛒 COMMANDE PRODUIT\n\n📌 Nom: ${name}\n💰 Prix: ${price}\n📝 Description: ${desc}\n🖼️ Image: ${image}`;
-window.open(`https://wa.me/237670035609?text=${encodeURIComponent(msg)}`,'_blank');
+<script>
+
+function whatsapp(id){
+let msg=`🛒 COMMANDE PRODUIT
+
+📌 Produit: Image ${id}
+📞 WhatsApp: +237670035609`;
+
+window.open("https://wa.me/237670035609?text="+encodeURIComponent(msg),"_blank");
 }
-</script></body>
-  </html>
+
+function downloadImg(id,url){
+
+// POPUP DE PAIEMENT
+let popup = document.createElement("div");
+popup.style = `
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.85);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+`;
+
+popup.innerHTML = `
+<div style="
+background:#121a2b;
+padding:20px;
+border-radius:10px;
+width:90%;
+max-width:300px;
+text-align:center;
+color:white;
+">
+
+<h3>🔐 Téléchargement sécurisé</h3>
+
+<p style="font-size:13px;line-height:1.4;">
+Pour télécharger cette image,<br>
+💰 payez <b>1000 XAF</b><br>
+via WhatsApp :
+<br><b>+237670035609</b>
+</p>
+
+<button onclick="window.open('https://wa.me/237670035609','_blank')" 
+style="background:#25D366;color:white;width:100%;padding:6px;margin-top:10px;border:none;border-radius:5px;">
+📲 Payer sur WhatsApp
+</button>
+
+<button onclick="this.parentNode.parentNode.remove()" 
+style="background:#555;color:white;width:100%;padding:6px;margin-top:5px;border:none;border-radius:5px;">
+⬅ Retour
+</button>
+
+</div>
+`;
+
+document.body.appendChild(popup);
+}
+
+function updateTime(){
+document.getElementById("time").innerText=new Date().toLocaleTimeString();
+}
+setInterval(updateTime,1000);
+updateTime();
+
+</script>
+
+</body>
+</html>
