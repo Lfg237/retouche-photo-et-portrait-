@@ -315,7 +315,19 @@ cursor:pointer;
 </div>
 </div>
 
+<!-- ================= SCRIPT ================= -->
 <script>
+
+function whatsapp(id){
+let msg=`🛒 COMMANDE
+
+📦 Produit: Image ${id}
+💰 Prix: 1000 XAF
+📲 Contact WhatsApp pour paiement`;
+
+window.open("https://wa.me/237670035609?text="+encodeURIComponent(msg),"_blank");
+}
+
 function openDownload(id,url){
 
 let old=document.getElementById("popupBox");
@@ -323,6 +335,7 @@ if(old) old.remove();
 
 let popup=document.createElement("div");
 popup.id="popupBox";
+
 popup.style.cssText=`
 position:fixed;
 top:0;left:0;
@@ -344,78 +357,25 @@ max-width:340px;
 text-align:center;
 color:white;
 border:1px solid #3b82f6;
-box-shadow:0 0 20px rgba(59,130,246,0.4);
 ">
 
-<h2 style="margin-bottom:10px;">🔐 Téléchargement Premium</h2>
+<h2>🔐 Téléchargement Premium</h2>
 
-<p style="font-size:13px;opacity:0.9;">
-💰 Insère le code ou paie <b>1000 XAF</b> via WhatsApp
-</p>
+<p>💰 Code ou paiement 1000 XAF 💬</p>
 
-<!-- INPUT STYLE PRO -->
 <input id="codeInput"
-placeholder="🔑 Entrer le code ici"
-style="
-width:100%;
-padding:12px;
-margin-top:12px;
-border:none;
-border-radius:10px;
-text-align:center;
-font-weight:bold;
-font-size:14px;
-outline:none;
-background:#0f172a;
-color:white;
-border:1px solid #3b82f6;
-">
+placeholder="🔑 Code ici"
+style="width:100%;padding:12px;margin-top:10px;border-radius:10px;border:1px solid #3b82f6;background:#0f172a;color:white;text-align:center;">
 
-<!-- BOUTON TELECHARGER -->
-<button id="dlBtn"
-style="
-background:linear-gradient(90deg,#3b82f6,#2563eb);
-color:white;
-width:100%;
-padding:10px;
-margin-top:12px;
-border:none;
-border-radius:10px;
-font-weight:bold;
-cursor:pointer;
-">
-⬇ Télécharger maintenant
+<button id="dlBtn" style="width:100%;padding:10px;margin-top:10px;background:#3b82f6;color:white;border:none;border-radius:10px;">
+⬇ Télécharger
 </button>
 
-<!-- BOUTON WHATSAPP -->
-<button onclick="whatsapp(${id})"
-style="
-background:linear-gradient(90deg,#25D366,#16a34a);
-color:white;
-width:100%;
-padding:10px;
-margin-top:8px;
-border:none;
-border-radius:10px;
-font-weight:bold;
-cursor:pointer;
-">
-💬 Payer sur WhatsApp (1000 XAF)
+<button onclick="whatsapp(${id})" style="width:100%;padding:10px;margin-top:8px;background:#25D366;color:white;border:none;border-radius:10px;">
+💬 WhatsApp paiement
 </button>
 
-<!-- BOUTON RETOUR -->
-<button onclick="document.getElementById('popupBox').remove()"
-style="
-background:linear-gradient(90deg,#ef4444,#dc2626);
-color:white;
-width:100%;
-padding:10px;
-margin-top:8px;
-border:none;
-border-radius:10px;
-font-weight:bold;
-cursor:pointer;
-">
+<button onclick="document.getElementById('popupBox').remove()" style="width:100%;padding:10px;margin-top:8px;background:#ef4444;color:white;border:none;border-radius:10px;">
 🔙 Retour
 </button>
 
@@ -426,17 +386,18 @@ document.body.appendChild(popup);
 
 document.getElementById("dlBtn").onclick=function(){
 
-let code=document.getElementById("codeInput").value.trim().replace(/\s+/g,"").toUpperCase();
-let secret=("X"+id).toUpperCase();
+let code=document.getElementById("codeInput").value.trim();
+let secret="X"+id;
 
 if(code===secret){
 
 let a=document.createElement("a");
 a.href=url;
-a.download="Image_"+id+".jpg";
-document.body.appendChild(a);
+a.target="_blank"; // 📱 compatible téléphone
+a.rel="noopener";
 a.click();
-document.body.removeChild(a);
+
+alert("📥 Ouvre l’image et fais 'Enregistrer' sur ton téléphone");
 
 document.getElementById("popupBox").remove();
 
@@ -447,6 +408,14 @@ alert("❌ Code incorrect");
 };
 
 }
+
+function updateTime(){
+document.getElementById("time").innerText=new Date().toLocaleTimeString();
+}
+setInterval(updateTime,1000);
+updateTime();
+
 </script>
+
 </body>
 </html>
