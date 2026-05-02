@@ -176,17 +176,19 @@ cursor:pointer;
 <script>
 
 function whatsapp(id){
-let msg=`🛒 COMMANDE PRODUIT
+let msg=`🛒 DEMANDE DE CODE
 
 📌 Produit: Image ${id}
-📞 WhatsApp: +237670035609`;
+📞 Bonjour, je n'ai pas encore le code pour télécharger cette image.`;
 
-window.open("https://wa.me/237670035609?text="+encodeURIComponent(msg),"_blank");
+window.open(
+"https://wa.me/237670035609?text="+encodeURIComponent(msg),
+"_blank"
+);
 }
 
 function downloadImg(id,url){
 
-// POPUP DE PAIEMENT
 let popup = document.createElement("div");
 popup.style = `
 position:fixed;
@@ -205,26 +207,42 @@ background:#121a2b;
 padding:20px;
 border-radius:10px;
 width:90%;
-max-width:300px;
+max-width:320px;
 text-align:center;
 color:white;
 ">
 
 <h3>🔐 Téléchargement sécurisé</h3>
 
-<p style="font-size:13px;line-height:1.4;">
-Pour télécharger cette image,<br>
-💰 payez <b>1000 XAF</b><br>
-via WhatsApp :
-<br><b>+237670035609</b>
+<p style="font-size:13px;">
+Entrez votre code pour télécharger :
 </p>
 
-<button onclick="window.open('https://wa.me/237670035609','_blank')" 
-style="background:#25D366;color:white;width:100%;padding:6px;margin-top:10px;border:none;border-radius:5px;">
-📲 Payer sur WhatsApp
+<input id="codeInput" placeholder="Ex: X23"
+style="width:100%;padding:8px;margin-top:8px;border:none;border-radius:5px;">
+
+<button onclick="
+let code=document.getElementById('codeInput').value;
+if(code==='X'+${id}){
+let a=document.createElement('a');
+a.href='${url}';
+a.download='image_${id}.jpg';
+a.click();
+this.parentNode.parentNode.remove();
+}else{
+alert('❌ Code incorrect');
+}
+"
+style="background:#3b82f6;color:white;width:100%;padding:6px;margin-top:10px;border:none;border-radius:5px;">
+⬇ Télécharger
 </button>
 
-<button onclick="this.parentNode.parentNode.remove()" 
+<button onclick="whatsapp(${id})"
+style="background:#25D366;color:white;width:100%;padding:6px;margin-top:5px;border:none;border-radius:5px;">
+📲 Obtenir le code sur WhatsApp
+</button>
+
+<button onclick="this.parentNode.parentNode.remove()"
 style="background:#555;color:white;width:100%;padding:6px;margin-top:5px;border:none;border-radius:5px;">
 ⬅ Retour
 </button>
@@ -242,6 +260,5 @@ setInterval(updateTime,1000);
 updateTime();
 
 </script>
-
 </body>
 </html>
