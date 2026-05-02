@@ -393,15 +393,22 @@ let secret="X"+id;
 
 if(code===secret){
 
-window.open(url,"_blank");
+// 1. Ouvrir image
+let win = window.open(url, "_blank");
+
+if(win){
 
 setTimeout(()=>{
-alert("📥 Ouvre l’image et appuie long pour télécharger");
+alert("📥 IMPORTANT :\n\n👉 Appuie long sur l'image\n👉 Puis clique sur 'Télécharger' ou 'Enregistrer dans la galerie'");
 },500);
 
 setTimeout(()=>{
-alert("📱 Android: Télécharger\n🍎 iPhone: Ajouter aux photos");
+alert("📱 Android : Télécharger image\n🍎 iPhone : Ajouter aux photos");
 },2000);
+
+}else{
+alert("❌ Impossible d’ouvrir l’image\nVérifie ton navigateur");
+}
 
 document.getElementById("popupBox").remove();
 
@@ -410,9 +417,6 @@ alert("❌ Code incorrect");
 }
 
 };
-
-}
-
 function updateTime(){
 document.getElementById("time").innerText=new Date().toLocaleTimeString();
 }
