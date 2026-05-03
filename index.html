@@ -226,7 +226,7 @@ const images = [
 "https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20-%202026-05-03T072347_202605030815_1.jpg"
 ];
 
-const container = document.getElementById("style");
+const container = document.getElementById("portrait");
 
 images.forEach((url,i)=>{
 
@@ -237,12 +237,12 @@ container.innerHTML += `
   <div class="img-box"><img src="${url}"></div>
 
   <div class="card-content">
-    <div class="title">Style ${id}</div>
+    <div class="title">portrait ${id}</div>
     <div class="desc">Créatif</div>
-    <div class="price">1200 FCFA</div>
+    <div class="price">1000 FCFA</div>
 
     <button class="download" onclick="openDownload(${id},'${url}')">Télécharger</button>
-    <button class="wa" onclick="whatsapp(${id},1200,'Style')">WhatsApp</button>
+    <button class="wa" onclick="whatsapp(${id},1200,'portrait')">WhatsApp</button>
   </div>
 </div>`;
 });
