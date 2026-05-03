@@ -383,15 +383,30 @@ document.addEventListener("DOMContentLoaded", function(){
     }
   };
 
-  // 🔥 WHATSAPP DANS POPUP
-  document.getElementById("btnWhatsappPopup").onclick = function(){
-    const phone = "237670035609";
-    const msg = "Bonjour, je veux de l'aide pour l'image ID x" + currentId;
-    window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(msg));
-  };
+  
+function whatsapp(id, url, price = 1000, title = "Portrait") {
 
-});
-</script>
+  const phone = "237670035609";
+
+  // texte propre e-commerce
+  const message =
+`🖼️ *Commande Produit*
+
+📌 Produit : ${title}
+🆔 ID Image : x${id}
+💰 Prix : ${price} FCFA
+
+📝 Message :
+Je suis intéressé par ce portrait et je souhaite le commander.
+
+🔗 Image :
+${url}`;
+
+  const link = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+  window.open(link, "_blank");
+}
+
 </script>
 
 </body>
