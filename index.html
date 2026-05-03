@@ -119,13 +119,14 @@ margin-top:10px;
 </header>
 
 <!-- ================= SENSUELLE ================= -->
+
 <div class="section">
 <h2>🔥 Sensuelle</h2>
-<div class="carousel">
+<div class="carousel" id="sensuelle"></div>
+</div>
 
 <script>
 function getSensuelleImages(){
-
   return [
     "070501_202605030746_1.jpg",
     "070446_202605030746_1.jpg",
@@ -163,39 +164,48 @@ function getSensuelleImages(){
     "072521_202605030816_1.jpg",
     "072503_202605030816_1.jpg"
   ];
-
 }
-</script>
 
+(function(){
+
+const images = getSensuelleImages();
 const base = "https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20-%202026-05-03T";
-const container = document.currentScript.parentElement;
+const container = document.getElementById("sensuelle");
 
 images.forEach((file,i)=>{
-let id = 100+i;
+
+let id = file.split("_")[0];
 let url = base + file;
 
 container.innerHTML += `
 <div class="card">
-<div class="img-box"><img src="${url}"></div>
-<div class="card-content">
-<div class="title">Sensuelle ${id}</div>
-<div class="desc">Premium</div>
-<div class="price">1200 FCFA</div>
-<button class="download" onclick="openDownload(${id},'${url}')">Télécharger</button>
-<button class="wa" onclick="whatsapp(${id})">WhatsApp</button>
-</div>
+  <div class="img-box"><img src="${url}"></div>
+  <div class="card-content">
+    <div class="title">Sensuelle ${id}</div>
+    <div class="desc">Premium</div>
+    <div class="price">1200 FCFA</div>
+
+    <button class="download" onclick="openDownload(${id},'${url}')">
+      Télécharger
+    </button>
+
+    <button class="wa" onclick="whatsapp('${file}',1200,'Sensuelle')">
+      WhatsApp
+    </button>
+  </div>
 </div>`;
 });
+
 })();
+
 </script>
 
-</div>
-</div>
 
 <!-- ================= ACRYLIQUE ================= -->
 <div class="section">
 <h2>🎨 Acrylique</h2>
-<div class="carousel">
+<div class="carousel" id="acrylique"></div>
+</div>
 
 <script>
 (function(){
@@ -214,7 +224,7 @@ const images = [
 "https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(49)_202605010821_1.jpg"
 ];
 
-const container = document.currentScript.parentElement;
+const container = document.getElementById("acrylique");
 
 images.forEach((url, index) => {
 
@@ -222,22 +232,33 @@ let id = 300 + index;
 
 container.innerHTML += `
 <div class="card">
+
   <div class="img-box">
-    <img src="${url}" onerror="this.style.opacity='0.3'">
+    <img src="${url}">
   </div>
 
   <div class="card-content">
-    <div class="title">Acrylique ${id}</div>
-    <div class="desc">Style artistique</div>
-    <div class="price">1000 FCFA</div>
 
-    <button class="download" onclick="openDownload(${id},'${url}')">
+    <div style="font-size:13px;font-weight:bold;">
+      Acrylique ${id}
+    </div>
+
+    <div style="font-size:11px;opacity:0.8;">
+      Style artistique
+    </div>
+
+    <div style="color:#22c55e;font-weight:bold;">
+      1000 FCFA
+    </div>
+
+    <button class="download" onclick="openPopup(${id},'${url}')">
       Télécharger
     </button>
 
     <button class="wa" onclick="whatsapp(${id})">
       WhatsApp
     </button>
+
   </div>
 </div>
 `;
@@ -247,46 +268,64 @@ container.innerHTML += `
 })();
 </script>
 
-</div>
-</div>
-
 <!-- ================= STYLE ================= -->
 <div class="section">
 <h2>💡 STYLE</h2>
-<div class="carousel">
+<div class="carousel" id="style"></div>
+</div>
 
 <script>
 (function(){
-const files=[
-"071439_202605030803_1.jpg",
-"072347_202605030815_1.jpg",
-"072407_202605030815_1.jpg"
+
+const images = [
+"https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20-%202026-05-03T071439_202605030803_1.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20-%202026-05-03T072347_202605030815_1.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20-%202026-05-03T072407_202605030815_1.jpg"
 ];
 
-const base="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20-%202026-05-03T";
-const container=document.currentScript.parentElement;
+const container = document.getElementById("style");
 
-files.forEach((f,i)=>{
-let id=i+1;
-let url=base+f;
+images.forEach((url, index) => {
 
-container.innerHTML+=`
+let id = 400 + index;
+
+container.innerHTML += `
 <div class="card">
-<div class="img-box"><img src="${url}"></div>
-<div class="card-content">
-<div class="title">Style ${id}</div>
-<div class="desc">Créatif</div>
-<div class="price">1200 FCFA</div>
-<button class="download" onclick="openDownload(${id},'${url}')">Télécharger</button>
-<button class="wa" onclick="whatsapp(${id})">WhatsApp</button>
+
+  <div class="img-box">
+    <img src="${url}">
+  </div>
+
+  <div class="card-content">
+
+    <div style="font-size:13px;font-weight:bold;">
+      Style ${id}
+    </div>
+
+    <div style="font-size:11px;opacity:0.8;">
+      Créatif / Premium
+    </div>
+
+    <div style="color:#22c55e;font-weight:bold;">
+      1200 FCFA
+    </div>
+
+    <button class="download" onclick="openPopup(${id},'${url}')">
+      Télécharger
+    </button>
+
+    <button class="wa" onclick="whatsapp(${id})">
+      WhatsApp
+    </button>
+
+  </div>
 </div>
-</div>`;
+`;
+
 });
+
 })();
 </script>
-
-</div>
-</div>
 
 <!-- ================= PORTRAIT ================= -->
 <div class="section">
