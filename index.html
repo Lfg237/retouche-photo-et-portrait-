@@ -393,164 +393,92 @@ container.innerHTML += `
 </div>
 
 
-
-
-
-
 <!-- ================= PORTRAIT ================= -->
 <div class="section">
 <h2>🧑 Portrait</h2>
 <div class="carousel">
 
+<script>
+const images = [
+"070501_202605030746_1.jpg",
+"070446_202605030746_1.jpg",
+"070430_202605030746_1.jpg",
+"070348_202605030745_1.jpg",
+"070900_202605030755_1.jpg",
+"070839_202605030755_1.jpg",
+"070817_202605030754_1.jpg",
+"070516_202605030747_1.jpg",
+"071025_202605030757_1.jpg",
+"070957_202605030757_1.jpg",
+"070936_202605030756_1.jpg",
+"070917_202605030756_1.jpg",
+"071210_202605030758_1.jpg",
+"071116_202605030758_1.jpg",
+"071152_202605030758_1.jpg",
+"071057_202605030757_1.jpg",
+"071403_202605030801_1.jpg",
+"071343_202605030801_1.jpg",
+"071326_202605030800_1.jpg",
+"071244_202605030800_1.jpg",
+"071939_202605030811_1.jpg",
+"071920_202605030810_1.jpg",
+"071837_202605030807_1.jpg",
+"071819_202605030810_1.jpg",
+"072306_202605030814_1.jpg",
+"072247_202605030814_1.jpg",
+"072226_202605030814_1.jpg",
+"071954_202605030811_1.jpg",
+"072444_202605030815_1.jpg",
+"072426_202605030815_1.jpg",
+"072407_202605030815_1.jpg",
+"072347_202605030815_1.jpg",
+"072543_202605030816_1.jpg",
+"072521_202605030816_1.jpg",
+"072503_202605030816_1.jpg"
+];
+
+// URL base RAW GitHub (portrait)
+const baseURL = "https://raw.githubusercontent.com/Lfg237/d-p-t-image-Lesfacilitateurs-/main/portrait_233%20-%202026-05-03T";
+
+// ID propre automatique
+let startId = 200;
+
+const container = document.currentScript.parentElement;
+
+images.forEach((file, index) => {
+
+let id = startId + index;
+let url = baseURL + file;
+
+container.innerHTML += `
 <div class="card">
-<div class="img-box"><img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(51)_202605010820_1.jpg"></div>
-<div class="card-content">
-<div class="title">Portrait 51</div>
-<div class="desc">Studio HD</div>
-<div class="price">1000 FCFA</div>
-<button class="download" onclick="openDownload(51,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(51)_202605010820_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(51)">WhatsApp</button>
-</div>
-</div>
+  <div class="img-box">
+    <img src="${url}">
+  </div>
 
-<div class="card">
-<div class="img-box"><img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(52)_202605010820_1.jpg"></div>
-<div class="card-content">
-<div class="title">Portrait 52</div>
-<div class="desc">Studio HD</div>
-<div class="price">1000 FCFA</div>
-<button class="download" onclick="openDownload(52,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(52)_202605010820_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(52)">WhatsApp</button>
-</div>
-</div>
+  <div class="card-content">
+    <div class="title">Portrait ${id}</div>
+    <div class="desc">Studio HD</div>
+    <div class="price">1000 FCFA</div>
 
-<div class="card">
-<div class="img-box"><img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(53)_202605010820_1.jpg"></div>
-<div class="card-content">
-<div class="title">Portrait 53</div>
-<div class="desc">Studio HD</div>
-<div class="price">1000 FCFA</div>
-<button class="download" onclick="openDownload(53,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(53)_202605010820_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(53)">WhatsApp</button>
-</div>
-</div>
+    <button class="download" onclick="openDownload(${id},'${url}')">
+      Télécharger
+    </button>
 
-<div class="card">
-<div class="img-box"><img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(54)_202605010820_1.jpg"></div>
-<div class="card-content">
-<div class="title">Portrait 54</div>
-<div class="desc">Studio HD</div>
-<div class="price">1000 FCFA</div>
-<button class="download" onclick="openDownload(54,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(54)_202605010820_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(54)">WhatsApp</button>
+    <button class="wa" onclick="whatsapp(${id})">
+      WhatsApp
+    </button>
+  </div>
 </div>
-</div>
+`;
 
-<div class="card">
-<div class="img-box"><img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(55)_202605010819_1.jpg"></div>
-<div class="card-content">
-<div class="title">Portrait 55</div>
-<div class="desc">Studio HD</div>
-<div class="price">1000 FCFA</div>
-<button class="download" onclick="openDownload(55,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(55)_202605010819_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(55)">WhatsApp</button>
-</div>
-</div>
-
-<div class="card">
-<div class="img-box"><img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(56)_202605010819_1.jpg"></div>
-<div class="card-content">
-<div class="title">Portrait 56</div>
-<div class="desc">Studio HD</div>
-<div class="price">1000 FCFA</div>
-<button class="download" onclick="openDownload(56,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(56)_202605010819_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(56)">WhatsApp</button>
-</div>
-</div>
-
-<div class="card">
-<div class="img-box"><img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(57)_202605010819_1.jpg"></div>
-<div class="card-content">
-<div class="title">Portrait 57</div>
-<div class="desc">Studio HD</div>
-<div class="price">1000 FCFA</div>
-<button class="download" onclick="openDownload(57,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(57)_202605010819_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(57)">WhatsApp</button>
-</div>
-</div>
-
-<div class="card">
-<div class="img-box"><img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(58)_202605010819_1.jpg"></div>
-<div class="card-content">
-<div class="title">Portrait 58</div>
-<div class="desc">Studio HD</div>
-<div class="price">1000 FCFA</div>
-<button class="download" onclick="openDownload(58,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(58)_202605010819_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(58)">WhatsApp</button>
-</div>
-</div>
-
-<div class="card">
-<div class="img-box"><img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(59)_202605010818_1.jpg"></div>
-<div class="card-content">
-<div class="title">Portrait 59</div>
-<div class="desc">Studio HD</div>
-<div class="price">1000 FCFA</div>
-<button class="download" onclick="openDownload(59,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(59)_202605010818_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(59)">WhatsApp</button>
-</div>
-</div>
-
-<div class="card">
-<div class="img-box"><img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(60)_202605010818_1.jpg"></div>
-<div class="card-content">
-<div class="title">Portrait 60</div>
-<div class="desc">Studio HD</div>
-<div class="price">1000 FCFA</div>
-<button class="download" onclick="openDownload(60,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(60)_202605010818_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(60)">WhatsApp</button>
-</div>
-</div>
-
-<!-- DUPLICATION PATTERN CONTINUE -->
-
-<div class="card">
-<div class="img-box"><img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(61)_202605010818_1.jpg"></div>
-<div class="card-content">
-<div class="title">Portrait 61</div>
-<div class="desc">Studio HD</div>
-<div class="price">1000 FCFA</div>
-<button class="download" onclick="openDownload(61,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(61)_202605010818_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(61)">WhatsApp</button>
-</div>
-</div>
-
-<div class="card">
-<div class="img-box"><img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(62)_202605010818_1%20(1).jpg"></div>
-<div class="card-content">
-<div class="title">Portrait 62</div>
-<div class="desc">Studio HD</div>
-<div class="price">1000 FCFA</div>
-<button class="download" onclick="openDownload(62,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(62)_202605010818_1%20(1).jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(62)">WhatsApp</button>
-</div>
-</div>
-
-<!-- ... continue jusqu'à 88 -->
-
-<div class="card">
-<div class="img-box"><img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(88)_202605010811_1.jpg"></div>
-<div class="card-content">
-<div class="title">Portrait 88</div>
-<div class="desc">Studio HD</div>
-<div class="price">1000 FCFA</div>
-<button class="download" onclick="openDownload(88,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(88)_202605010811_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(88)">WhatsApp</button>
-</div>
-</div>
+});
+</script>
 
 </div>
 </div>
+
+
 
 <!-- ================= STYLE ================= -->
 <div class="section">
