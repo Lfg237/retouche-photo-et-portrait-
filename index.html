@@ -185,134 +185,52 @@ container.innerHTML += `
 </div>
 </div>
 
+
+
+
 <!-- ================= ACRYLIQUE ================= -->
 <div class="section">
 <h2>🎨 Acrylique</h2>
-
 <div class="carousel">
 
+<script>
+const images = [
+"28_202604302108_1.jpg",
+"29_202604302108_1.jpg",
+"33_202604302109_1.jpg",
+"34_202604302109_1.jpg",
+"38_202604302110_1.jpg",
+"37_202604302110_1.jpg",
+"40_202604302111_1.jpg",
+"41_202604302111_1%20(1).jpg",
+"42_202604302111_1.jpg",
+"45_202605010822_1%20(1).jpg",
+"49_202605010821_1.jpg"
+];
+
+const container = document.currentScript.parentElement;
+
+images.forEach(file => {
+
+let id = file.match(/^(\d+)_/)[1];
+
+let url = "https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(" + id + ")_" + file;
+
+container.innerHTML += `
 <div class="card">
-<div class="img-box"><img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(28)_202604302108_1.jpg"></div>
+<div class="img-box"><img src="${url}"></div>
 <div class="card-content">
-<div class="title">Acrylique 28</div>
+<div class="title">Acrylique ${id}</div>
 <div class="desc">Style artistique</div>
 <div class="price">1000 FCFA</div>
-<button class="download" onclick="openDownload(28,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(28)_202604302108_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(28)">WhatsApp</button>
-</div>
-</div>
-
-<div class="card">
-<div class="img-box"><img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(29)_202604302108_1.jpg"></div>
-<div class="card-content">
-<div class="title">Acrylique 29</div>
-<div class="desc">Portrait créatif</div>
-<div class="price">1000 FCFA</div>
-<button class="download" onclick="openDownload(29,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(29)_202604302108_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(29)">WhatsApp</button>
-</div>
-</div>
-
-<div class="card">
-<div class="img-box"><img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(33)_202604302109_1.jpg"></div>
-<div class="card-content">
-<div class="title">Acrylique 33</div>
-<div class="desc">Effet moderne</div>
-<div class="price">1000 FCFA</div>
-<button class="download" onclick="openDownload(33,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(33)_202604302109_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(33)">WhatsApp</button>
-</div>
-</div>
-
-<div class="card">
-<div class="img-box"><img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(34)_202604302109_1.jpg"></div>
-<div class="card-content">
-<div class="title">Acrylique 34</div>
-<div class="desc">Design artistique</div>
-<div class="price">1000 FCFA</div>
-<button class="download" onclick="openDownload(34,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(34)_202604302109_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(34)">WhatsApp</button>
-</div>
-</div>
-
-<div class="card">
-<div class="img-box"><img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(38)_202604302110_1.jpg"></div>
-<div class="card-content">
-<div class="title">Acrylique 38</div>
-<div class="desc">Art visuel</div>
-<div class="price">1000 FCFA</div>
-<button class="download" onclick="openDownload(38,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(38)_202604302110_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(38)">WhatsApp</button>
-</div>
-</div>
-
-<div class="card">
-<div class="img-box"><img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(37)_202604302110_1.jpg"></div>
-<div class="card-content">
-<div class="title">Acrylique 37</div>
-<div class="desc">Effet peinture</div>
-<div class="price">1000 FCFA</div>
-<button class="download" onclick="openDownload(37,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(37)_202604302110_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(37)">WhatsApp</button>
-</div>
-</div>
-
-<div class="card">
-<div class="img-box"><img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(40)_202604302111_1.jpg"></div>
-<div class="card-content">
-<div class="title">Acrylique 40</div>
-<div class="desc">Portrait stylisé</div>
-<div class="price">1000 FCFA</div>
-<button class="download" onclick="openDownload(40,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(40)_202604302111_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(40)">WhatsApp</button>
-</div>
-</div>
-
-<div class="card">
-<div class="img-box"><img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(41)_202604302111_1%20(1).jpg"></div>
-<div class="card-content">
-<div class="title">Acrylique 41</div>
-<div class="desc">Création unique</div>
-<div class="price">1000 FCFA</div>
-<button class="download" onclick="openDownload(41,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(41)_202604302111_1%20(1).jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(41)">WhatsApp</button>
-</div>
-</div>
-
-<div class="card">
-<div class="img-box"><img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(42)_202604302111_1.jpg"></div>
-<div class="card-content">
-<div class="title">Acrylique 42</div>
-<div class="desc">Effet premium</div>
-<div class="price">1000 FCFA</div>
-<button class="download" onclick="openDownload(42,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(42)_202604302111_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(42)">WhatsApp</button>
-</div>
-</div>
-
-<div class="card">
-<div class="img-box"><img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(45)_202605010822_1%20(1).jpg"></div>
-<div class="card-content">
-<div class="title">Acrylique 45</div>
-<div class="desc">Portrait HD</div>
-<div class="price">1000 FCFA</div>
-<button class="download" onclick="openDownload(45,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(45)_202605010822_1%20(1).jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(45)">WhatsApp</button>
-</div>
-</div>
-
-<div class="card">
-<div class="img-box"><img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(49)_202605010821_1.jpg"></div>
-<div class="card-content">
-<div class="title">Acrylique 49</div>
-<div class="desc">Style avancé</div>
-<div class="price">1000 FCFA</div>
-<button class="download" onclick="openDownload(49,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20(49)_202605010821_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(49)">WhatsApp</button>
+<button class="download" onclick="openDownload(${id},'${url}')">Télécharger</button>
+<button class="wa" onclick="whatsapp(${id})">WhatsApp</button>
 </div>
 </div>
 `;
+
 });
+
 </script>
 
 </div>
@@ -489,115 +407,46 @@ container.innerHTML += `
 <h2>💡 STYLE</h2>
 <div class="carousel">
 
+<script>
+const images = [
+"071439_202605030803_1.jpg",
+"072347_202605030815_1.jpg",
+"072407_202605030815_1.jpg",
+"072444_202605030815_1.jpg",
+"072543_202605030816_1.jpg",
+"072521_202605030816_1.jpg",
+"072503_202605030816_1.jpg",
+"072426_202605030815_1.jpg"
+];
+
+const container = document.currentScript.parentElement;
+
+images.forEach(file => {
+
+let id = file.match(/_(\d+)_1/)[1];
+
+let url = "https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20-%202026-05-03T" + file;
+
+container.innerHTML += `
 <div class="card">
-<div class="img-box">
-<img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20-%202026-05-03T071439_202605030803_1.jpg">
-</div>
+<div class="img-box"><img src="${url}"></div>
 <div class="card-content">
-<div class="title">style 1</div>
+<div class="title">Style ${id}</div>
 <div class="desc">Créatif</div>
 <div class="price">1200 FCFA</div>
-<button class="download" onclick="openDownload(701,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20-%202026-05-03T071439_202605030803_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(1)">WhatsApp</button>
-</div>
-</div>
-
-<div class="card">
-<div class="img-box">
-<img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20-%202026-05-03T072347_202605030815_1.jpg">
-</div>
-<div class="card-content">
-<div class="title">style 2</div>
-<div class="desc">Vision</div>
-<div class="price">1200 FCFA</div>
-<button class="download" onclick="openDownload(2,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20-%202026-05-03T072347_202605030815_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(2)">WhatsApp</button>
-</div>
-</div>
-
-<div class="card">
-<div class="img-box">
-<img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20-%202026-05-03T072407_202605030815_1.jpg">
-</div>
-<div class="card-content">
-<div class="title">style 3</div>
-<div class="desc">Inspiration</div>
-<div class="price">1200 FCFA</div>
-<button class="download" onclick="openDownload(3,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20-%202026-05-03T072407_202605030815_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(3)">WhatsApp</button>
-</div>
-</div>
-
-<div class="card">
-<div class="img-box">
-<img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20-%202026-05-03T072444_202605030815_1.jpg">
-</div>
-<div class="card-content">
-<div class="title"> style 4</div>
-<div class="desc">Créativité</div>
-<div class="price">1200 FCFA</div>
-<button class="download" onclick="openDownload(4,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20-%202026-05-03T072444_202605030815_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(4)">WhatsApp</button>
-</div>
-</div>
-
-<div class="card">
-<div class="img-box">
-<img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20-%202026-05-03T072543_202605030816_1.jpg">
-</div>
-<div class="card-content">
-<div class="title">style 5</div>
-<div class="desc">Vision artistique</div>
-<div class="price">1200 FCFA</div>
-<button class="download" onclick="openDownload(5,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20-%202026-05-03T072543_202605030816_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(5)">WhatsApp</button>
-</div>
-</div>
-
-<div class="card">
-<div class="img-box">
-<img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20-%202026-05-03T072521_202605030816_1.jpg">
-</div>
-<div class="card-content">
-<div class="title">Imagination 6</div>
-<div class="desc">Art libre</div>
-<div class="price">1200 FCFA</div>
-<button class="download" onclick="openDownload(6,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20-%202026-05-03T072521_202605030816_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(6)">WhatsApp</button>
-</div>
-</div>
-
-<div class="card">
-<div class="img-box">
-<img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20-%202026-05-03T072503_202605030816_1.jpg">
-</div>
-<div class="card-content">
-<div class="title">style 7</div>
-<div class="desc">Concept créatif</div>
-<div class="price">1200 FCFA</div>
-<button class="download" onclick="openDownload(7,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20-%202026-05-03T072503_202605030816_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(7)">WhatsApp</button>
-</div>
-</div>
-
-<div class="card">
-<div class="img-box">
-<img src="https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20-%202026-05-03T072426_202605030815_1.jpg">
-</div>
-<div class="card-content">
-<div class="title">style 8</div>
-<div class="desc">Création unique</div>
-<div class="price">1200 FCFA</div>
-<button class="download" onclick="openDownload(8,'https://raw.githubusercontent.com/Lfg237/image-retouche-photo-portrait-/main/portrait_233%20-%202026-05-03T072426_202605030815_1.jpg')">Télécharger</button>
-<button class="wa" onclick="whatsapp(8)">WhatsApp</button>
+<button class="download" onclick="openDownload(${id},'${url}')">Télécharger</button>
+<button class="wa" onclick="whatsapp(${id})">WhatsApp</button>
 </div>
 </div>
 `;
+
 });
 </script>
 
 </div>
 </div>
+
+
 
 <!-- ================= ABSTRAIT ================= -->
 <div class="section">
