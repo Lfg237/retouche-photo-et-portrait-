@@ -143,7 +143,7 @@ const container = document.getElementById("sensuelle");
 
 images.forEach((url,i)=>{
 
-let id = 700 + i;
+let id = 1000 + i;
 
 container.innerHTML += `
 <div class="card">
@@ -155,13 +155,13 @@ container.innerHTML += `
   <div class="card-content">
     <div class="title">Sensuelle ${id}</div>
     <div class="desc">Premium</div>
-    <div class="price">1200 FCFA</div>
+    <div class="price">1000 FCFA</div>
 
     <button class="download" onclick="openDownload(${id},'${url}')">
       Télécharger
     </button>
 
-    <button class="wa" onclick="whatsapp(${id},1200,'Sensuelle')">
+    <button class="wa" onclick="whatsapp(${id},1000,'Sensuelle')">
       WhatsApp
     </button>
   </div>
@@ -304,7 +304,7 @@ container.innerHTML += `
     <div class="price">1000 FCFA</div>
 
     <button class="download" onclick="openDownload(${id},'${url}')">Télécharger</button>
-    <button class="wa" onclick="whatsapp(${id},1200,'portrait')">WhatsApp</button>
+    <button class="wa" onclick="whatsapp(${id},1000,'portrait')">WhatsApp</button>
   </div>
 </div>`;
 });
@@ -492,10 +492,10 @@ container.innerHTML += `
   <div class="card-content">
     <div class="title">Style ${id}</div>
     <div class="desc">Créatif</div>
-    <div class="price">1200 FCFA</div>
+    <div class="price">1000 FCFA</div>
 
     <button class="download" onclick="openDownload(${id},'${url}')">Télécharger</button>
-    <button class="wa" onclick="whatsapp(${id},1200,'Style')">WhatsApp</button>
+    <button class="wa" onclick="whatsapp(${id},1000,'Style')">WhatsApp</button>
   </div>
 </div>`;
 });
