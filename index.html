@@ -385,27 +385,29 @@ document.addEventListener("DOMContentLoaded", function(){
 
 });
 
-/* ================= WHATSAPP (IMPORTANT : GLOBAL) ================= */
-function whatsapp(id, url = currentUrl, price = 1000, title = "Portrait") {
+
+function whatsapp(id, price = 1000, title = "Portrait") {
 
   const phone = "237670035609";
+
+  const siteLink = "https://retouche-photo-et-portrait.vercel.app/";
 
   const message =
 `🖼️ *Commande Produit*
 
 📌 Produit : ${title}
-🆔 ID Image : x${id}
+🆔 Numéro Image : ${id}
 💰 Prix : ${price} FCFA
 
+🌐 Site :
+${siteLink}
+
 📝 Message :
-Je suis intéressé par ce portrait et je souhaite le commander.
+Je suis intéressé par ce portrait et je souhaite le commander.`;
 
-🔗 Image :
-${url}`;
+  const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
 
-  const link = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
-
-  window.open(link, "_blank");
+  window.open(url, "_blank");
 }
 </script>
 
