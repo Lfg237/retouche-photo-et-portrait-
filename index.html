@@ -208,6 +208,8 @@ container.innerHTML += `
 </div>
 
 <script>
+
+
 (function(){
 
 const images = [
@@ -226,47 +228,39 @@ const images = [
 
 const container = document.getElementById("acrylique");
 
-images.forEach((url, index) => {
+images.forEach((url)=>{
 
-let id = 300 + index;
+  // 🔥 extraction automatique de l'ID réel (28, 29, 33…)
+  let match = url.match(/\((\d+)\)/);
+  let id = match ? match[1] : "0";
 
-container.innerHTML += `
-<div class="card">
+  container.innerHTML += `
+  <div class="card">
 
-  <div class="img-box">
-    <img src="${url}">
+    <div class="img-box">
+      <img src="${url}">
+    </div>
+
+    <div class="card-content">
+
+      <div style="font-weight:bold;">Acrylique ${id}</div>
+      <div style="font-size:12px;">Style artistique</div>
+      <div style="color:#22c55e;">1000 FCFA</div>
+
+      <button class="download" onclick="openDownload(${id},'${url}')">
+        Télécharger
+      </button>
+
+      <button class="wa" onclick="whatsapp(${id},1000,'Acrylique')">
+        WhatsApp
+      </button>
+
+    </div>
   </div>
-
-  <div class="card-content">
-
-    <div style="font-size:13px;font-weight:bold;">
-      Acrylique ${id}
-    </div>
-
-    <div style="font-size:11px;opacity:0.8;">
-      Style artistique
-    </div>
-
-    <div style="color:#22c55e;font-weight:bold;">
-      1000 FCFA
-    </div>
-
-    <button class="download" onclick="openPopup(${id},'${url}')">
-      Télécharger
-    </button>
-
-    <button class="wa" onclick="whatsapp(${id})">
-      WhatsApp
-    </button>
-
-  </div>
-</div>
-`;
-
+  `;
 });
 
 })();
-</script>
 
 <!-- ================= STYLE ================= -->
 <div class="section">
