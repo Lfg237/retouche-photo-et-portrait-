@@ -418,7 +418,6 @@ container.innerHTML += `
 let currentUrl = "";
 let currentId = "";
 
-/* ================= OPEN POPUP ================= */
 function openDownload(id, url){
   currentUrl = url;
   currentId = id;
@@ -426,6 +425,31 @@ function openDownload(id, url){
   document.getElementById("codeInput").value = "";
   document.getElementById("errorMsg").innerText = "";
   document.getElementById("downloadPopup").style.display = "flex";
+}
+
+function downloadImage(){
+
+  const userCode = document.getElementById("codeInput").value.trim();
+  const realCode = "x" + currentId;
+
+  if(userCode === realCode){
+
+    const a = document.createElement("a");
+    a.href = currentUrl;
+    a.download = "image_" + currentId + ".jpg";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    closePopup();
+
+  } else {
+    document.getElementById("errorMsg").innerText = "❌ Code incorrect !";
+  }
+}
+
+function closePopup(){
+  document.getElementById("downloadPopup").style.display = "none";
 }
 
 /* ================= CLOSE POPUP ================= */
