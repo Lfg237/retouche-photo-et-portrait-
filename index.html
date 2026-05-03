@@ -114,7 +114,7 @@ margin-top:10px;
 
 <header>
 <div>☰</div>
-<div>VENTE DES PORTRAITS</div>
+<div>VENTE DES PORTRAITS & PHOTO</div>
 <div></div>
 </header>
 
@@ -344,6 +344,7 @@ container.innerHTML += `
 let currentUrl = "";
 let currentId = "";
 
+/* ================= OPEN POPUP ================= */
 function openDownload(id, url){
   currentUrl = url;
   currentId = id;
@@ -353,12 +354,12 @@ function openDownload(id, url){
   document.getElementById("downloadPopup").style.display = "flex";
 }
 
-// fermeture popup
+/* ================= CLOSE POPUP ================= */
 function closePopup(){
   document.getElementById("downloadPopup").style.display = "none";
 }
 
-// téléchargement sécurisé
+/* ================= DOWNLOAD ================= */
 document.addEventListener("DOMContentLoaded", function(){
 
   document.getElementById("btnDownload").onclick = function(){
@@ -378,13 +379,14 @@ document.addEventListener("DOMContentLoaded", function(){
       closePopup();
 
     } else {
-      document.getElementById("errorMsg").innerText =
-        "❌ Code incorrect !";
+      document.getElementById("errorMsg").innerText = "❌ Code incorrect !";
     }
   };
 
-  
-function whatsapp(id, url, price = 1000, title = "Portrait") {
+});
+
+/* ================= WHATSAPP (IMPORTANT : GLOBAL) ================= */
+function whatsapp(id, url = currentUrl, price = 1000, title = "Portrait") {
 
   const phone = "237670035609";
 
