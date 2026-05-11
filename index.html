@@ -113,6 +113,92 @@ text-align:center;
 <div></div>
 </header>
 
+
+
+<!-- =================spirituel ================= -->
+<div class="section">
+<h2>🧭 SPIRITUEL</h2>
+<div class="carousel" id="spirituel"></div>
+</div>
+
+<script>
+(function(){
+
+const images = [
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/177d5c030eac11bcf8dcab9d5d665be1.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/12be0149abb96f9039bceaa0e5287697.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/1148bd9c31cfe93682b0dfb701e97e67.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/0e604180c015520c458df1652533ad9e.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/0d22ad905a5490992598e2e980c0ee9e.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/31f7f52ab8e5caa837b226bf8f7347ff.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/319f304fcd5b802c96fabc11bbd0f410.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/28305c0c92ec433ea6d3bf4d2711cc24.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/27915f01b3d59e6f9c36d194d6a78ca2.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/24bace9b2fd84f742afae172292fcefb.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/4222e646c9d444da40ddcb7257e13e39.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/4122315cc2f723520192c67c3888b6ec.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/4122315cc2f723520192c67c3888b6ec.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/3c1b4eb7d47aebbf12fe23012699042e.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/35826e41aaa2ddfeb0890df62cce548f%20(1).jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/6a05ca143591d675a418db08363869ee.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/659040eb6edf855f02dbea0eddca0e55.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/4e56017780ed9ce9d88f0e7778ca1fb7.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/4caab46424f8d7d2ea24e2481a2fc661.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/4c713e7406cd75904b549607aaf54da1.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/7e5157eb93b0aa21b4a757899164a52e.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/76061ae68c4c4b985ca2dc65b98cde0c.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/75712376ca8df57396db461d67007a89.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/731f0e33a29ecd286ccac117836a6176.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/aa8a914b61e2d20cc9a0ea21984c9109.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/a25565181f407a24cce808e92c427081.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/8f6d81a5c8a5a3f1b4cf12fa36ee90cb.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/b0075c98c06285997ee0c6628e91200f.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/aea73bdac8c04da7e3dc6c4221223b9c.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/ae6f8318d2361c01e55775654c4ad335.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/7efbe5b71cdf718ef93d2a403e391c41.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/c11fb19a9c43cc9bb0e8895c1a192fc0.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/bf60e6cd69acde08eb824d7416fa662a.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/befcbc6ea979036d8cbfc7be2e3e448b.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/b7899c4367e63c09fb6b1cd9230d4cb3.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/b05fd7e7790d823f3f1e7c070ac23ed9.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/e8f8fd76ff9aba9c6177d6b686d7ecf6.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/e80508b2811f3fdecf595f818769a1fc.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/de2566a87e5e6105f1594179bf8c3f3e.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/dd50d6c6ce8fc27c20644b2e3b0afbee.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/d971bc275e0802539edd291a8deab637.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/ffc7a4b3e0232dc69e287410eda87af3.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/f9a23cbe246836449368e94936162283.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/f446a83aadbaeef3fe2a026a3cc0513a.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/f446a83aadbaeef3fe2a026a3cc0513a.jpg",
+"https://raw.githubusercontent.com/Lfg237/image-qui-parle-religieux-/main/ee419f08fe23f5c28f1756f4a908e761.jpg",
+
+];
+
+const container = document.getElementById("figure");
+
+images.forEach((url,i)=>{
+
+let id = 400 + i;
+
+container.innerHTML += `
+<div class="card">
+  <div class="img-box"><img src="${url}"></div>
+
+  <div class="card-content">
+    <div class="title">Style ${id}</div>
+    <div class="desc">Créatif</div>
+    <div class="price">300FCFA</div>
+
+    <button class="download" onclick="openDownload(${id},'${url}')">Télécharger</button>
+    <button class="wa" onclick="whatsapp(${id},300,'figure')">WhatsApp</button>
+  </div>
+</div>`;
+});
+
+})();
+</script>
+
+
 <!-- ================= SENSUELLE ================= -->
 <div class="section">
 <h2>🔥 Sensuelle</h2>
